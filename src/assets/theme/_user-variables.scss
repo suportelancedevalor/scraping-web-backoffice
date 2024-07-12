@@ -1,0 +1,57 @@
+//
+// user-variables.scss
+// Use this to overwrite Bootstrap and Dashkit variables
+//
+
+// Example of a variable override to change Dashkit's background color
+// Remove the "//" to comment it in and see it in action!
+// $body-bg: #12263F;
+
+// Paths
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$font-family-base: 'Inter', sans-serif !default;
+
+
+$black: #000000 !default;
+$white: #FFFFFF !default;
+$warning: #FE8F00;
+$success: #00A550;
+$danger: #E13C31;
+$info: #23A7DF;
+
+$dark: $black;
+$dark90: #404040;
+$dark75: #404040;
+$dark50: #808080;
+$dark25: #BFBFBF;
+$dark15: #D9D9D9;
+$dark10: #E5E5E5;
+$dark05: #F2F2F2;
+$dark01: #FDFDFD;
+
+$primary: $dark90;
+$primary75: $dark75;
+$primary50:$dark50;
+$primary25: $dark25;
+$primary15: $dark15;
+$primary10: $dark10;
+$primary05: $dark05;
+$primary01: $dark01;
+
+$gray-100: $dark01 !default;
+$gray-200: $dark05 !default;
+$gray-300: $dark10 !default;
+$gray-400: $dark15 !default;
+$gray-500: $dark25 !default;
+$gray-600: $dark50 !default;
+$gray-700: $dark75 !default;
+$gray-800: $dark75 !default;
+$gray-900: $dark90 !default;
+
+
+$muted: $dark25;
+
+
+// $table-hover-bg: $primary05 !default;

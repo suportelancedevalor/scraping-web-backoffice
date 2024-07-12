@@ -1,0 +1,216 @@
+//
+// user.scss
+// Use this to write your custom SCSS
+
+@import "./user-variables";
+
+@media (min-width: 768px) {
+    .main-content {
+        margin-left: 250px;
+        // margin-top: 65px;
+    }
+}
+
+// TYPOGRAPHY
+.text-action {
+    font-size: 16px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 20.8px;
+}
+.text-caption {
+    font-size: 10px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 13px;
+}
+.text-header {
+    font-size: 20px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 32px;
+}
+.text-label {
+    font-size: 12px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 15.6px;
+}
+.text-pagesubtitle {
+    font-size: 26px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 33.8px;
+}
+.text-pagetitle {
+    font-size: 32px !important;
+    font-weight: $font-weight-bold;
+    line-height: 41.6px;
+}
+.text-paragraph {
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 24px;
+}
+.text-subtitle {
+    font-size: 16px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 24px;
+}
+
+
+// SIDEBAR
+#sidebar .router-link-active .nav-link{
+    color: $white !important;
+}
+
+#sidebar .router-link-active .nav-link i{
+    color: $white !important;
+}
+
+#sidebar .nav-link {
+    color: $primary50;
+}
+
+#sidebar .navbar-divider {
+    color: $primary15
+}
+
+// NAVBAR
+#topbar.navbar-light {
+    border-color: $primary15;
+}
+
+// HEADER
+.header-pretitle {
+    text-transform: unset;
+    letter-spacing: unset;
+}
+#header .nav-tabs .nav-link.active, 
+#header .nav-tabs .nav-item.show .nav-link {
+    color: $white;
+}
+.header-body {
+    border-color: $primary15;
+}
+#header .nav-tabs .nav-link:not(.active) {
+    color: $muted;
+}
+#header .header-tabs {
+    margin-bottom: 0;
+}
+#header .nav-tabs .nav-item {
+    margin-right: 0.25rem;
+}
+
+// FORMS
+.form-control:disabled, .form-control[readonly] {
+    background-color: $dark05 !important;
+    border-color: $dark15 !important;
+}
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border-color: $primary15;
+    color: $primary !important;
+}
+.form-control:focus {
+    border-color: $primary25;
+}
+#password_input .input-group-text {
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    border-color: $primary15;
+}
+.form-label {
+    font-size: 12px !important;
+    font-weight:  $font-weight-bold;
+    line-height: 15.6px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $muted !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $muted !important;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $muted !important;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $muted !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    $muted !important;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    $muted !important;
+}
+
+// BUTTONS
+.btn {
+    border-radius: 10px;
+}
+.btn-del {
+    color: #E63757;
+    background-color: #E6375740;
+    border-color: #E6375700;
+}
+.btn-del:focus,
+.btn-del:hover,
+.btn-del:active {
+    color: #FFFFFF;
+    background-color: #E63757;
+    border-color: #E63757;
+}
+
+// TABLE
+.table thead th {
+    padding: 0.6rem 1rem;
+    text-transform: unset;
+    letter-spacing: unset;
+}
+
+.table tbody tr[active="true"] > *{
+    background-color: $primary;
+}
+// TODO: Essa cor não tá pegando das variaveis, por isso coloquei ela manual aqui
+.table-hover > tbody > tr:hover > * {
+    background-color: $primary75;
+}
+
+// CUSTOM
+.placeholder {
+    height: 150px;
+    border-radius: 15px;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-move {
+    cursor: move;
+}
+.display-5 {
+    font-size: 1.5rem
+}
+.display-6 {
+    font-size: 1rem
+}
+.ql-editor {
+    border: none;
+}
+.ql-container {
+    border-radius: 0 0 0.375rem 0.375rem;
+    border-color: $dark10 !important;
+}
+.ql-toolbar {
+    border-color: $dark10 !important;
+}
+.ql-toolbar + .ql-container {
+    margin-top: 0;
+}
+
+.bg-primary-10 {
+    background-color: $primary10;
+}
+
+.text-primary-soft {
+    color: $primary50;
+}
