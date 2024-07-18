@@ -8,7 +8,7 @@
         <div
           class="card-body p-8 d-flex justify-content-center align-items-center"
         >
-          <p>IMPLEMENTAR</p>
+          <p>IMPLEMENTAR!</p>
         </div>
       </div>
     </Container>
