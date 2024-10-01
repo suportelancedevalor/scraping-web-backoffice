@@ -6,10 +6,10 @@ module.exports = defineConfig({
 module.exports = {
   devServer: {
     proxy: {
-      '/dev/auction': {
+      '/home': {
         target: 'https://9wf1jnv947.execute-api.us-east-1.amazonaws.com',
         changeOrigin: true,
-        pathRewrite: { '^/dev/auction': '/dev/auction' },
+        pathRewrite: { '^/home': '/home' },
       },
     },
   },
