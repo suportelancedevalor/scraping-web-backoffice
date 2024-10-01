@@ -19,7 +19,7 @@ export default defineComponent({
     const fetchData = async () => {
       try {
         // Aqui estamos assumindo que o proxy está configurado no vue.config.js ou um backend está lidando com isso
-        const response = await axios.get("/dev/auction", {
+        const response = await axios.get("https://9wf1jnv947.execute-api.us-east-1.amazonaws.com/dev/auction", {
           headers: {
             // Caso a API precise de headers específicos para CORS, você pode adicionar aqui
             "Content-Type": "application/json",
