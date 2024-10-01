@@ -18,7 +18,14 @@ export default defineComponent({
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://9wf1jnv947.execute-api.us-east-1.amazonaws.com/dev/auction");
+        // Aqui estamos assumindo que o proxy está configurado no vue.config.js ou um backend está lidando com isso
+        const response = await axios.get("/dev/auction", {
+          headers: {
+            // Caso a API precise de headers específicos para CORS, você pode adicionar aqui
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*", // CORS header (isso seria ignorado pelo navegador, mas útil em proxies)
+          },
+        });
         items.value = response.data;
       } catch (error) {
         console.error("Erro ao buscar dados", error);
@@ -36,7 +43,7 @@ export default defineComponent({
 
     return {
       items,
-      updateGeolocation
+      updateGeolocation,
     };
-  }
+  },
 });
