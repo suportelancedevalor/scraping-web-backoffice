@@ -23,7 +23,9 @@ export default defineComponent({
           headers: {
             // Caso a API precise de headers específicos para CORS, você pode adicionar aqui
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*", // CORS header (isso seria ignorado pelo navegador, mas útil em proxies)
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
           },
         });
         items.value = response.data;
