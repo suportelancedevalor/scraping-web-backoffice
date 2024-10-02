@@ -14,7 +14,16 @@
               <p class="card-text"><strong>Localidade:</strong> {{ item.card_locality }}</p>
               <p class="card-text"><strong>Preço:</strong> {{ item.price }}</p>
               <p class="card-text"><strong>Status:</strong> {{ item.status }}</p>
-              <button class="btn btn-primary" @click="updateGeolocation(item.id)">Atualizar Geolocalização</button>
+              <p class="card-text"><strong>Latitude:</strong> {{ item.lat }}</p>
+              <p class="card-text"><strong>Longitude:</strong> {{ item.lng }}</p>
+              <!-- Botão visível apenas se lat ou lng forem "não informado" -->
+              <button
+                v-if="item.lat === 'não informado' || item.lng === 'não informado'"
+                class="btn btn-primary"
+                @click="updateGeolocation(item.id)"
+              >
+                Atualizar Geolocalização
+              </button>
             </div>
           </div>
         </div>
