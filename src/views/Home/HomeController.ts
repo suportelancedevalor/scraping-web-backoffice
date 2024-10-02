@@ -24,12 +24,9 @@ export default defineComponent({
             ? 'https://9wf1jnv947.execute-api.us-east-1.amazonaws.com/dev/auction'
             : '/dev/auction';
   
-          // Aqui estamos assumindo que o proxy está configurado no vue.config.js ou um backend está lidando com isso
           const response = await axios.get(apiURL, {
             headers: {
-              // Caso a API precise de headers específicos para CORS, você pode adicionar aqui
               "Content-Type": "application/json",
-              // "Access-Control-Allow-Origin": "*", // CORS header (isso seria ignorado pelo navegador, mas útil em proxies)
             },
           });
           items.value = response.data;
@@ -51,7 +48,7 @@ export default defineComponent({
           alert("Erro ao atualizar geolocalização. Tente novamente.");
         }
       } catch (error) {
-        alert("Erro ao tentar atualizar geolocalização: " + error.message);
+        alert("Erro ao tentar atualizar geolocalização");
       }
     };
 
