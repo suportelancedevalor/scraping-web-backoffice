@@ -44,6 +44,12 @@
 </template>
 
 <script>
+export function toggleModal(id) {
+  const button = document.getElementById(`${id}-modal-btn`);
+  if (button) {
+    button?.click();
+  }
+}
 export default {
   props: {
     id: String,

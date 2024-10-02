@@ -1,14 +1,32 @@
 <template>
   <div class="form-group">
     <div class="d-flex justify-content-between">
-      <label v-if="label" class="form-label text-muted"> {{ label }} <i v-if="required" class="text-danger">*</i>
+      <label v-if="label" class="form-label text-muted">
+        {{ label }} <i v-if="required" class="text-danger">*</i>
       </label>
       <slot name="labelContentEnd"></slot>
     </div>
-    <input v-if="readOnly" class="form-control form-disabled" :value="`${value || ''}`" disabled :style="inputStyle" />
-    <input v-else class="form-control" v-maska :data-maska="mask" :lang='"pt-BR"' v-model.trim="model.$model"
-      :class="{ 'is-invalid': model.$error }" :type="type" :maxlength="maxLength" :placeholder="placeholder"
-      :min="minDate" :style="inputStyle" />
+    <input
+      v-if="readOnly"
+      class="form-control form-disabled"
+      :value="`${value || ''}`"
+      disabled
+      :style="inputStyle"
+    />
+    <input
+      v-else
+      class="form-control"
+      v-maska
+      :data-maska="mask"
+      :lang="'pt-BR'"
+      v-model.trim="model.$model"
+      :class="{ 'is-invalid': model.$error }"
+      :type="type"
+      :maxlength="maxLength"
+      :placeholder="placeholder"
+      :min="minDate"
+      :style="inputStyle"
+    />
     <div class="invalid-feedback">
       <small>{{ errorMsg }}</small>
     </div>
@@ -17,62 +35,62 @@
 </template>
 
 <script>
-import { vMaska } from "maska"
+import { vMaska } from "maska/vue";
 export default {
-  name: 'TextInput',
+  name: "TextInput",
   directives: {
-    maska: vMaska
+    maska: vMaska,
   },
   props: {
     model: {
       required: false,
-      default: () => { }
+      default: () => {},
     },
     type: {
       type: String,
-      default: 'text'
+      default: "text",
     },
     label: {
       type: String,
-      default: ''
+      default: "",
     },
     placeholder: {
       type: String,
-      default: ''
+      default: "",
     },
     errorMsg: {
       type: String,
-      default: 'Por favor, preencha este campo corretamente'
+      default: "Por favor, preencha este campo corretamente",
     },
     value: {
       type: [String, Number],
-      default: ''
+      default: "",
     },
     readOnly: {
       type: Boolean,
-      default: false
+      default: false,
     },
     maxLength: {
       type: Number,
-      default: null
+      default: null,
     },
     // pra campos de data
     minDate: {
       type: String,
-      default: null
+      default: null,
     },
     inputStyle: {
       type: String,
-      default: null
+      default: null,
     },
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     mask: {
       type: String,
-      default: ''
+      default: "",
     },
-  }
-}
+  },
+};
 </script>
