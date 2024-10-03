@@ -7,18 +7,20 @@
       <div v-if="items.length" class="card">
         <div class="card-body">
           <div v-for="item in items" :key="item.id" class="card mb-3">
-            <img :src="item.card_image" class="card-img-top" alt="Item Image">
+            <img :src="item.auction_data.images[0]" class="card-img-top" alt="Item Image">
             <div class="card-body">
-              <h5 class="card-title">{{ item.title }}</h5>
-              <p class="card-text">{{ item.size }}</p>
-              <p class="card-text"><strong>Localidade:</strong> {{ item.card_locality }}</p>
-              <p class="card-text"><strong>Preço:</strong> {{ item.price }}</p>
-              <p class="card-text"><strong>Status:</strong> {{ item.status }}</p>
-              <p class="card-text"><strong>Latitude:</strong> {{ item.lat }}</p>
-              <p class="card-text"><strong>Longitude:</strong> {{ item.lng }}</p>
+              <h5 class="card-title">{{ item.auction_data.title }}</h5>
+              <p class="card-text"><strong>Localização:</strong> {{ item.auction_data.location }}</p>
+              <p class="card-text"><strong>Descrição:</strong> {{ item.auction_data.description }}</p>
+              <p class="card-text"><strong>Valor de Avaliação:</strong> {{ item.auction_data.valuation }}</p>
+              <p class="card-text"><strong>Status:</strong> {{ item.auction_data.status }}</p>
+              <p class="card-text"><strong>Primeiro Leilão:</strong> {{ item.auction_data.auction_dates.first_auction }}</p>
+              <p class="card-text"><strong>Segundo Leilão:</strong> {{ item.auction_data.auction_dates.second_auction }}</p>
+              <p class="card-text"><strong>Latitude:</strong> {{ item.auction_data.lat }}</p>
+              <p class="card-text"><strong>Longitude:</strong> {{ item.auction_data.lng }}</p>
               <!-- Botão visível apenas se lat ou lng forem "não informado" -->
               <button
-                v-if="item.lat === 'não informado' || item.lng === 'não informado'"
+                v-if="item.auction_data.lat === 'não informado' || item.auction_data.lng === 'não informado'"
                 class="btn btn-primary"
                 @click="updateGeolocation(item.id)"
               >

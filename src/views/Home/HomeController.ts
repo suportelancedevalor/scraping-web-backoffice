@@ -1,38 +1,45 @@
 import { defineComponent, ref, onMounted } from "vue";
 import axios from "axios";
 
-interface Item {
-  id: string;
+interface AuctionData {
+  images: string[];
   title: string;
-  size: string;
-  card_locality: string;
-  price: string;
+  location: string;
+  description: string;
+  valuation: string;
   status: string;
-  card_image: string;
+  auction_dates: {
+    first_auction: string;
+    second_auction: string;
+  };
   lat: string;
   lng: string;
+}
+
+interface Item {
+  id: string;
+  auction_data: AuctionData;
 }
 
 export default defineComponent({
   name: "HomeController",
   setup() {
     const items = ref<Item[]>([]);
-
     const fetchData = async () => {
-        try {
-          const apiURL = process.env.NODE_ENV === 'production'
-            ? 'https://9wf1jnv947.execute-api.us-east-1.amazonaws.com/dev/auction'
-            : '/dev/auction';
-  
-          const response = await axios.get(apiURL, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          items.value = response.data;
-        } catch (error) {
-          console.error("Erro ao buscar dados", error);
-        }
+      try {
+        const apiURL = process.env.NODE_ENV === 'production'
+          ? 'https://9wf1jnv947.execute-api.us-east-1.amazonaws.com/dev/auction'
+          : '/dev/auction';
+
+        const response = await axios.get(apiURL, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        items.value = response.data;
+      } catch (error) {
+        console.error("Erro ao buscar dados", error);
+      }
     };
 
     const updateGeolocation = async (id: string) => {
@@ -48,7 +55,7 @@ export default defineComponent({
           alert("Erro ao atualizar geolocalização. Tente novamente.");
         }
       } catch (error) {
-        alert("Erro ao tentar atualizar geolocalização");
+        alert("Erro ao tentar atualizar geolocalização: " + error.message);
       }
     };
 
