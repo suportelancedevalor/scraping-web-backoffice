@@ -7,7 +7,7 @@
       <div v-if="items.length" class="card">
         <div class="card-body">
           <div v-for="item in items" :key="item.id" class="card mb-3">
-            <img :src="item.auction_data.images[0]" class="card-img-top" alt="Item Image">
+            <img v-if="item.auction_data.images && item.auction_data.images.length" :src="item.auction_data.images[0]" class="card-img-top" alt="Item Image">
             <div class="card-body">
               <h5 class="card-title">{{ item.auction_data.title }}</h5>
               <p class="card-text"><strong>Localização:</strong> {{ item.auction_data.location }}</p>

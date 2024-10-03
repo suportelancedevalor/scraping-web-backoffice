@@ -55,7 +55,7 @@ export default defineComponent({
           alert("Erro ao atualizar geolocalização. Tente novamente.");
         }
       } catch (error) {
-        alert("Erro ao tentar atualizar geolocalização: " + error.message);
+        alert("Erro ao tentar atualizar geolocalização: " + error);
       }
     };
 
